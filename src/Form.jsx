@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form({onDiagnose}) {
+export function Form({onDiagnose}) {
    const [gender, setGender] = useState("男性");
    const [age, setAge] = useState("25");
    const [height, setHeight] = useState("170");

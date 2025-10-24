@@ -10,7 +10,9 @@ export default function App() {
       <h1>体系診断アプリ</h1>
       <p>必要な方法を入力してあなたの体型を診断します。</p>
       <Form onDiagnose={setDiagnoseData} />
-      <Result data={diagnoseData} onReset={() => setDiagnoseData(null)} />
+      {diagnoseData && (
+        <Result data={diagnoseData} onReset={() => setDiagnoseData(null)} />
+      )}
     </div>
   )
 }
