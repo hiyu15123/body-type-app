@@ -1,4 +1,4 @@
-export default function Result(data, onReset) {
+export default function Result({data, onReset}) {
    return (
       <div>
          <h2>あなたの情報</h2>
@@ -8,7 +8,7 @@ export default function Result(data, onReset) {
          <p>体重：{data.weight} kg</p>
          <p>運動頻度：{data.activity}</p>
          <h2>診断結果</h2>
-         <p>BMI：{data.bmi.toFixed(1)}</p>
+         <p>BMI：{data.bmi}</p>
          <p>体型タイプ：{data.type}</p>
          <p>アドバイス：{data.advice}</p>
          <button onClick={onReset}>もう一度診断する</button>

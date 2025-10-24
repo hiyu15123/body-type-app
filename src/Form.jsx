@@ -8,7 +8,47 @@ export default function Form({onDiagnose}) {
    const [activity, setActivity] = useState("ほとんどしない");
 
    const handleSubmit = (e) => {
-      e.preventdefault();
+      e.preventDefault();
+
+      const h = parseFloat(height) / 100;
+      const w = parseFloat(weight);
+      const bmi = w / (h * h);
+
+      let type = "";
+      if (bmi < 18.5) {
+         type = "痩せ型";
+      } else if (bmi < 25) {
+         type = "標準体型";
+      } else {
+         type = "肥満体型";
+      }
+
+      let advice = "";
+      if (type === "痩せ型") {
+         if (activity === "ほとんどしない") {
+            advice = "食事をしっかり取り、筋肉を増やしましょう。";
+         } else if (activity === "週1〜2回") {
+            advice = "軽い運動を取り入れつつ、栄養を意識して体重を増やしましょう。";
+         } else {
+            advice = "たんぱく質を意識して、健康的に体重を増やしましょう。";
+         }
+      } else if (type === "標準体型") {
+         if (activity === "ほとんどしない") {
+            advice = "軽い運動を始めるとさらに健康的です。";
+         } else if (activity === "週1〜2回") {
+            advice = "運動習慣は順調です。もう少し増やすと理想的です。";
+         } else {
+            advice = "素晴らしいバランスです！維持していきましょう。";
+         }
+      } else {
+         if (activity === "ほとんどしない") {
+            advice = "まずは週1〜2回の運動から始めましょう。";
+         } else if (activity === "週1〜2回") {
+            advice = "運動を増やしつつ、食事内容を見直しましょう。";
+         } else {
+            advice = "運動はしっかりできています。食事を調整しましょう。";
+         }
+      }
 
       onDiagnose({
          gender: gender,
@@ -16,6 +56,9 @@ export default function Form({onDiagnose}) {
          height: Number(height),
          weight: Number(weight),
          activity: activity,
+         bmi: bmi,
+         type: type,
+         advice: advice,
       });
    };
 
