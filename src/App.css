@@ -28,10 +28,6 @@ h1 + * {
    text-align: center;
 }
 
-.desc + * {
-   margin-top: 2.4rem;
-}
-
 @media (max-width: 767px) {
    .hidden-sp {
       display: none;
@@ -118,6 +114,16 @@ input, select {
    border-radius: 2px;
    border-radius: 0.8rem;
    height: 4rem;
+}
+
+select {
+   text-align: center;
+   -webkit-appearance: none;
+   appearance: none;
+}
+
+select option {
+   text-align: center;
 }
 
 .content {
