@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className='container'>
       <h1>体型診断アプリ</h1>
-      <p className='desc'>項目を入力すると、あなたの体型を診断します。BMI・体型タイプ・アドバイスをチェックしましょう。</p>
+      <p className='desc'>項目を入力すると、あなたの体型を診断します。<br className='hidden-sp'></br>BMI・体型タイプ・アドバイスをチェックしましょう。</p>
       {!diagnoseData ? (
         <Form onDiagnose={setDiagnoseData} /> 
         ) : ( 

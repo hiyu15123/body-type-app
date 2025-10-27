@@ -7,9 +7,8 @@ body {
    width: 100%;
    margin: 0 auto;
    background-color: var(--color-wht);
-   height: 100vh;
-   padding-inline: 1.6rem;
-   padding-top: 3rem;
+   padding: 3rem 1.6rem 6rem 1.6rem;
+   height: 100%;
 }
 
 h1 {
@@ -33,15 +32,55 @@ h1 + * {
    margin-top: 2.4rem;
 }
 
+@media (max-width: 767px) {
+   .hidden-sp {
+      display: none;
+   }
+}
+
+
 h2 {
-   font-size: 2rem;
+   font-size: 2.4rem;
    font-weight: bold;
    line-height: 1.5;
    text-align: center;
    margin-top: 3.2rem;
+   position: relative;
+   color: var(--color-pri);
+   font-size: 20px;
+   padding: 2.4rem 0;
+   text-align: center;
 }
 
+
 h2 + * {
+   margin-top: 2.4rem;
+}
+
+
+
+h2::before{
+   content: "";
+   position: absolute;
+   top: 0.4rem;
+   left: 50%;
+   width: 8rem;
+   height: 7rem;
+   border-radius: 50%;
+   border: 5px solid #a6ddb0;
+   border-left-color: transparent;
+   border-right-color: transparent;
+   -webkit-transform: translateX(-50%);
+   transform: translateX(-50%);
+}
+
+h3 {
+   font-size: 1.8rem;
+   font-weight: bold;
+   margin-top: 2.4rem;
+}
+
+h3 + * {
    margin-top: 1.6rem;
 }
 
@@ -57,17 +96,36 @@ h2 + * {
    margin-top: 3.2rem;
 }
 
+.wrapper {
+   display: inline-block;
+   width: 50%;
+}
+
+.wrapper select {
+   width: 100%;
+}
+.wrapper input {
+   width: calc(100% - (1rem + 28px));
+}
+
+.wrapper span {
+   margin-left: 1rem;
+   min-width: 28px;
+   display: inline-block;
+}
+
 label {
    min-width: 100px;
    display: inline-block;
    font-weight: bold;
-   color: var(--color-pri);
+   text-align: left;
 }
 
 input, select {
-   width: 50%;
    border: 2px solid var(--color-pri);
    border-radius: 2px;
+   border-radius: 0.8rem;
+   height: 4rem;
 }
 
 .content {
@@ -97,4 +155,59 @@ button {
 button:hover {
    background-color: var(--color-wht);
    color: var(--color-pri);
+}
+
+.bar {
+   position: relative;
+   width: 100%;
+   height: 1.4rem;
+   border-radius: 0.8rem;
+   background: linear-gradient(
+      to right,
+      #4fc3f7 0% 30%,
+      #81c784 30% 70%,
+      #ffb74d 70% 100%
+   );
+}
+
+.indicator {
+   position: absolute;
+   top: -4px;
+   width: 2px;
+   height: 2.2rem;
+   background: var(--color-text);
+   border-radius: 2px;
+   transform: translateX(-50%);
+}
+
+.notes {
+   display: flex;
+   justify-content: space-between;
+   font-size: 1.4rem;
+   margin-top: 5px;
+   color: var(--color-text);
+}
+
+.note {
+   text-align: center;
+   flex: 1;
+}
+
+.bmi {
+   margin-top: 10px;
+   font-weight: bold;
+   text-align: center;
+   font-size: 2rem;
+}
+
+.img {
+   width: 100%;
+   aspect-ratio: 1;
+   max-height: 300px;
+}
+
+.img img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
 }
