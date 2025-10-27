@@ -36,19 +36,19 @@ export function Result({data, onReset}) {
    let imgSrc;
    if (data.gender === "男性") {
       if (data.type === "痩せ型") {
-         imgSrc = "public/img/img_men-slim.png";
+         imgSrc = "img/img_men-slim.png";
       } else if (data.type === "標準体型") {
-         imgSrc = "public/img/img_men-normal.png";
+         imgSrc = "img/img_men-normal.png";
       } else {
-         imgSrc = "public/img/img_men-obese.png";
+         imgSrc = "img/img_men-obese.png";
       }
    } else {
       if (data.type === "痩せ型") {
-         imgSrc = "public/img/img_women-slim.png";
+         imgSrc = "img/img_women-slim.png";
       } else if (data.type === "標準体型") {
-         imgSrc = "public/img/img_women-normal.png";
+         imgSrc = "img/img_women-normal.png";
       } else {
-         imgSrc = "public/img/img_women-obese.png";
+         imgSrc = "img/img_women-obese.png";
       }
    }
 
