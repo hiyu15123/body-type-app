@@ -2,13 +2,17 @@ import { useState } from "react";
 
 export function Form({onDiagnose}) {
    const [gender, setGender] = useState("男性");
-   const [age, setAge] = useState("25");
-   const [height, setHeight] = useState("175");
-   const [weight, setWeight] = useState("65");
+   const [age, setAge] = useState("");
+   const [height, setHeight] = useState("");
+   const [weight, setWeight] = useState("");
    const [activity, setActivity] = useState("ほとんどしない");
 
    const handleSubmit = (e) => {
       e.preventDefault();
+      if (!gender || !age || !height || !weight || !activity) {
+         alert("全ての項目を入力してください。");
+         return;
+      }
 
       const h = parseFloat(height) / 100;
       const w = parseFloat(weight);
@@ -60,8 +64,6 @@ export function Form({onDiagnose}) {
          }
       }
 
-
-
       onDiagnose({
          gender: gender,
          age: Number(age),
@@ -75,49 +77,53 @@ export function Form({onDiagnose}) {
    };
 
    return (
-      <form onSubmit={handleSubmit} className="form">
-         <div className="input">
-            <label htmlFor="gender">性別</label>
-            <div className="wrapper">
-               <select name="gender" id="gender" value={gender} onChange={(e) => {setGender(e.target.value)}}>
-                  <option value="男性">男性</option>
-                  <option value="女性">女性</option>
-               </select>
+      <>
+         <h2>診断フォーム</h2>
+         <form onSubmit={handleSubmit} className="form">
+            <div className="input">
+               <label htmlFor="gender">性別</label>
+               <div className="wrapper">
+                  <select name="gender" id="gender" value={gender} onChange={(e) => {setGender(e.target.value)}}>
+                     <option value="男性">男性</option>
+                     <option value="女性">女性</option>
+                  </select>
+               </div>
             </div>
-         </div>
-         <div className="input">
-            <label htmlFor="age">年齢</label>
-            <div className="wrapper">
-               <input type="number" id="age" value={age} onChange={(e) => {setAge(e.target.value)}} placeholder="例: 25" />
-               <span>歳</span>
+            <div className="input">
+               <label htmlFor="age">年齢</label>
+               <div className="wrapper">
+                  <input type="number" id="age" value={age} onChange={(e) => {setAge(e.target.value)}} placeholder="例: 25" />
+                  <span>歳</span>
+               </div>
             </div>
-         </div>
-         <div className="input">
-            <label htmlFor="height">身長</label>
-            <div className="wrapper">
-               <input type="number" id="height" value={height} onChange={(e) => {setHeight(e.target.value)}} placeholder="例: 170" />
-               <span>cm</span>
+            <div className="input">
+               <label htmlFor="height">身長</label>
+               <div className="wrapper">
+                  <input type="number" id="height" value={height} onChange={(e) => {setHeight(e.target.value)}} placeholder="例: 170" />
+                  <span>cm</span>
+               </div>
             </div>
-         </div>
-         <div className="input">
-            <label htmlFor="weight">体重</label>
-            <div className="wrapper">
-               <input type="number" id="weight" value={weight} onChange={(e) => {setWeight(e.target.value)}} placeholder="例: 70" />
-               <span>kg</span>
+            <div className="input">
+               <label htmlFor="weight">体重</label>
+               <div className="wrapper">
+                  <input type="number" id="weight" value={weight} onChange={(e) => {setWeight(e.target.value)}} placeholder="例: 70" />
+                  <span>kg</span>
+               </div>
             </div>
-         </div>
-         <div className="input">
-            <label htmlFor="activity">運動頻度</label>
-            <div className="wrapper">
-               <select value={activity} id="activity" onChange={(e) => setActivity(e.target.value)}>
-                  <option value="ほとんどしない">ほとんどしない</option>
-                  <option value="週1〜2回">週1〜2回</option>
-                  <option value="週3回以上">週3回以上</option>
-               </select>
+            <div className="input">
+               <label htmlFor="activity">運動頻度</label>
+               <div className="wrapper">
+                  <select value={activity} id="activity" onChange={(e) => setActivity(e.target.value)}>
+                     <option value="ほとんどしない">ほとんどしない</option>
+                     <option value="週1〜2回">週1〜2回</option>
+                     <option value="週3回以上">週3回以上</option>
+                  </select>
+               </div>
+               
             </div>
-            
-         </div>
-         <button type="submit">診断する</button>
-      </form>
+            <button type="submit">診断する</button>
+         </form>
+      </>
+      
    )
 }
