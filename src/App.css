@@ -1,0 +1,100 @@
+body {
+   background-color: #f9fafb;
+}
+
+.container {
+   max-width: 500px;
+   width: 100%;
+   margin: 0 auto;
+   background-color: var(--color-wht);
+   height: 100vh;
+   padding-inline: 1.6rem;
+   padding-top: 3rem;
+}
+
+h1 {
+   color: var(--color-pri);
+   font-size: 2.8rem;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+   text-align: center;
+   line-height: 1.5;
+}
+
+h1 + * {
+   margin-top: 1.6rem;
+}
+
+.desc {
+   text-align: center;
+}
+
+.desc + * {
+   margin-top: 2.4rem;
+}
+
+h2 {
+   font-size: 2rem;
+   font-weight: bold;
+   line-height: 1.5;
+   text-align: center;
+   margin-top: 3.2rem;
+}
+
+h2 + * {
+   margin-top: 1.6rem;
+}
+
+.form {
+   margin-top: 4rem;
+}
+
+.input {
+   text-align: center;
+}
+
+.input + .input {
+   margin-top: 3.2rem;
+}
+
+label {
+   min-width: 100px;
+   display: inline-block;
+   font-weight: bold;
+   color: var(--color-pri);
+}
+
+input, select {
+   width: 50%;
+   border: 2px solid var(--color-pri);
+   border-radius: 2px;
+}
+
+.content {
+   text-align: center;
+}
+
+.content p + * {
+   margin-top: 1rem;
+}
+
+button {
+   background-color: var(--color-pri);
+   color: var(--color-wht);
+   padding: 1.2rem 3.2rem;
+   font-weight: bold;
+   border-radius: 3.2rem;
+   border: 2px solid var(--color-pri);
+   transition: var(--animation-second);
+   min-width: 280px;
+   text-align: center;
+   margin-inline: auto;
+   display: block;
+   justify-content: center;
+   margin-top: 4rem;
+}
+
+button:hover {
+   background-color: var(--color-wht);
+   color: var(--color-pri);
+}
