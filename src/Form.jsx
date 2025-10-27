@@ -21,7 +21,7 @@ export function Form({onDiagnose}) {
       let type = "";
       if (age >= 40) {
          if (bmi < 20) {
-            type = "痩せ型";
+            type = "痩せ体型";
          } else if (bmi < 26) {
             type = "標準体型";
          } else {
@@ -29,7 +29,7 @@ export function Form({onDiagnose}) {
          }
       } else {
          if (bmi < 18.5) {
-            type = "痩せ型";
+            type = "痩せ体型";
          } else if (bmi < 25) {
             type = "標準体型";
          } else {
@@ -38,7 +38,7 @@ export function Form({onDiagnose}) {
       }
 
       let advice = "";
-      if (type === "痩せ型") {
+      if (type === "痩せ体型") {
          if (activity === "ほとんどしない") {
             advice = "食事は3食しっかり摂り、タンパク質を意識しましょう。筋トレやウォーキングを取り入れると健康的に筋肉を増やせます。無理なダイエットは避けてください。";
          } else if (activity === "週1〜2回") {

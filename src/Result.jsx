@@ -1,7 +1,7 @@
 export function Result({data, onReset}) {
 
    let typeColor;
-   if (data.type === "痩せ型") {
+   if (data.type === "痩せ体型") {
       typeColor = "#4fc3f7";
    } else if(data.type === "標準体型") {
       typeColor = "#81c784";
@@ -35,7 +35,7 @@ export function Result({data, onReset}) {
 
    let imgSrc;
    if (data.gender === "男性") {
-      if (data.type === "痩せ型") {
+      if (data.type === "痩せ体型") {
          imgSrc = "img/img_men-slim.png";
       } else if (data.type === "標準体型") {
          imgSrc = "img/img_men-normal.png";
@@ -43,7 +43,7 @@ export function Result({data, onReset}) {
          imgSrc = "img/img_men-obese.png";
       }
    } else {
-      if (data.type === "痩せ型") {
+      if (data.type === "痩せ体型") {
          imgSrc = "img/img_women-slim.png";
       } else if (data.type === "標準体型") {
          imgSrc = "img/img_women-normal.png";
